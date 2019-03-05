@@ -27,7 +27,7 @@ namespace CorePHP\Slim\Dependency\Database;
 class Parser
 {
     /**
-     * general parse URL for MySQL and Postgres connections
+     * General parse URL for MySQL and Postgres connections
      *
      * @param string $url Connection string
      *

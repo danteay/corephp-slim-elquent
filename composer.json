@@ -27,7 +27,7 @@
         }
     },
     "scripts": {
-        "lint": "vendor/bin/phpcs",
+        "lintcs": "vendor/bin/phpcs",
         "test": "vendor/bin/phpunit"
     }
 }
