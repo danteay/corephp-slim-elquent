@@ -3,6 +3,16 @@
 This is a simple wrapper of Eloquent ORM for Slim 3. It provides a Parser class to
 generate connections option from a standard database URL of PostgresSQL, MySQL or SQLite databases.
 
+## Dependencies
+
+* [illuminate/database](https://packagist.org/packages/illuminate/database)
+
+## Installation
+
+```bash
+composer require corephp/slim-eloquent
+```
+
 ## Allowed Database URLs
 
 Te allowed formats of database connections are:
