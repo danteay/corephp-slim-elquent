@@ -9,6 +9,14 @@ generate connections option from a standard database URL of PostgresSQL, MySQL o
 
 ## Installation
 
+You can use the [slimcmd](https://packagist.org/packages/corephp/slim-cmd) tool to install this dependency:
+
+```bash
+slimcmd dependency:add eloquent
+```
+
+Or you can setup manually:
+
 ```bash
 composer require corephp/slim-eloquent
 ```
@@ -78,7 +86,7 @@ use CorePHP\Slim\Dependency\Database\Parser;
 $settings = [
     // ...
     "database" => Parser::parseConnection(
-        getenv('DATABASE_URL', 'sqlite://pato/to.database')
+        getenv('DATABASE_URL')
     )
     // ...
 ];
@@ -93,11 +101,13 @@ You can generate a `database.php` file your dependencies section with the code b
 use CorePHP\Slim\Dependency\Database\Eloquent;
 
 return function ($container) {
+    $settings = $container->get('eloquent');
+    
     $eloquent = new Eloquent();
-    $eloquent->addConnection($container['database']);
+    $eloquent->addConnection($settings);
 
     return $eloquent->getManager();
-}
+};
 ```
 
 This generates the main connection and boot Eloquent to use the models. Also you
